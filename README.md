@@ -1,3 +1,4 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/packerl-v2)](https://api.reuse.software/info/github.com/SAP/packerl-v2)
 
 # PackeRL v2, Placer, and LOGGIA
 
