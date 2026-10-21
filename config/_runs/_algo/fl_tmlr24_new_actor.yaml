@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - override /algorithm/trainable/nn: small_nn
+
+trainer:
+  ppo:
+    pi_max_kl: 0.0
+    pi_max_clip_fraction: 0.0
+    fieldlines:
+      style: tmlr24

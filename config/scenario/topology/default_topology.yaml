@@ -1,0 +1,3 @@
+defaults:
+  - attributes: default_attributes
+  - graph: default_graph

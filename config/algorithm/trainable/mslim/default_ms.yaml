@@ -1,0 +1,8 @@
+pred_format: "dual"  # "dual" or "mean"
+pred_space: "log"  # "log" or "flat"
+
+use_line_graph: false  # whether to operate on the line graph representation of the graph
+
+# how to re-use the node features of incident nodes as edge features when converting graphs into their line graph
+# representation (See ObservationGraph.to_line_graph() for options)
+line_graph_node_to_edge_features: "none"

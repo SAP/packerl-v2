@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+validation_topologies: 10
+validation_event_seqs_per_topology: 1
+
+eval_topologies: 30
+eval_event_seqs_per_topology: 1
+
+trainer:
+  ppo:
+    num_topologies: 4
+    num_event_seqs_per_topology: 4
+    num_event_seq_repeats: 1
+  il:
+    num_topologies: 4
+    num_event_seqs_per_topology: 4
+    num_event_seq_repeats: 1

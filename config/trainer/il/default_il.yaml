@@ -1,0 +1,28 @@
+# default parameters for Imitation Learning (IL)
+defaults:
+  - mslim: default_mslim
+  - placer: default_placer
+
+# number of training iterations
+iterations: 10
+
+# number of "rollout" episodes per iteration is the product of these three parameters
+num_topologies: 10
+num_event_seqs_per_topology: 1
+num_event_seq_repeats: 1
+
+# whether to interact with the environment during training (for DAgger-style IL), or just use generated topologies with
+# mock observations (for behavior cloning)
+interact_with_env: true
+
+# if not interacting with the environment, multiplier for number of topologies to generate (to increase data diversity)
+bc_topology_multiplier: 10
+
+# name of expert algorithm for imitation learning
+expert: "spf"
+
+# path to load the expert model from (for trained experts)
+expert_load_dir: ""
+
+# Optimizer learning rate
+learning_rate: 5.0e-4

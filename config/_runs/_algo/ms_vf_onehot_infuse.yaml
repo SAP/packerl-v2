@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+
+trainer:
+  fixed_scenarios: true
+  ppo:
+    vf_onehot_infuse: true

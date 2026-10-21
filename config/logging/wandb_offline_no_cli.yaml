@@ -1,0 +1,9 @@
+defaults:
+  - default_logging
+  - _self_
+
+log_level: "none"
+
+wandb:
+  enabled: true
+  offline: true

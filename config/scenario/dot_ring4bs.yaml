@@ -1,0 +1,9 @@
+defaults:
+  - default_scenario
+  - override topology: dot_ring4bs
+  - override events/traffic: tmf_ring4_bs_caida
+  - _self_
+
+ep_length: 10
+
+ms_per_step: 100.0

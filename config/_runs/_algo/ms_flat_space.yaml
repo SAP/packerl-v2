@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+    mslim:
+      pred_space: flat

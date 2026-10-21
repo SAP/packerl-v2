@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+
+trainer:
+  il:
+    mslim:
+      link_weight_mse_variant: simple

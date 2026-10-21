@@ -1,0 +1,15 @@
+defaults:
+  - fieldlines: default_fl  # sub-dict for fieldlines algorithm
+  - mslim: default_ms  # sub-dict for mslim algorithm
+  - placer: default_placer  # sub-dict for placer algorithm
+  - feat: default_feat  # input feature configuration
+  - nn: default_nn  # neural network architecture
+  - _self_
+
+flavor: "fieldlines"  # "fieldlines" or "mslim"
+
+# if specified, load the model from the given experiment's output dir (e.g. for evaluation)
+load_dir: ""
+
+# whether to normalize observations for the learning algorithm.
+normalize_observations: true

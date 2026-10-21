@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: placer
+
+trainer:
+  ppo:
+    placer:
+      exploration_mechanism: eps_greedy

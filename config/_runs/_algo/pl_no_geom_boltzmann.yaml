@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: placer
+
+trainer:
+  il:
+    placer:
+      geom_loss_weight: 0

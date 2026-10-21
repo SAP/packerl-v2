@@ -1,0 +1,14 @@
+# logging mode for program logs (NS3 and python). Choice options are the log severity levels of ns3
+log_level: "info"
+
+# ns3 modules for which things get logged to the console if the level is more than "none"
+ns3_log_modules: ["PackerlSim", "PackerlEnv"]
+
+wandb:
+  enabled: false
+  offline: false
+  entity: null
+  project_name: packerl
+  group_name: ${exp_name}
+  run_name: seeds_al${format:${train_algo_seed}, '{:02d}'}_sc${format:${train_scen_seed}, '{:02d}'}
+  job_type: ${sub_dir_shortener:${hydra:job.override_dirname}, 3, False}

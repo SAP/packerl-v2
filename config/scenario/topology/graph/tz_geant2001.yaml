@@ -1,0 +1,8 @@
+defaults:
+  - default_graph
+  - _self_
+
+mode: ["topology_zoo"]
+mode_configs:
+  topology_zoo:
+    network: "Geant2001"

@@ -1,0 +1,6 @@
+defaults:
+  - default_logging
+  - _self_
+
+wandb:
+  enabled: true

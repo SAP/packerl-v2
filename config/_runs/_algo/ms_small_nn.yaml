@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - override /algorithm/trainable/nn: small_nn
+
+algorithm:
+  trainable:
+    flavor: mslim

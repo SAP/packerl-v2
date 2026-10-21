@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: ms
+  - override /_runs/_scenario: m5
+  - override /_runs/_type: regular
+  - override /logging: wandb_offline_no_cli
+  - _self_
+
+exp_name: 0316_scaling
+
+hydra:
+  sweeper:
+    list_params:
+      train_inference_delay_scaling: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2
+      _runs/_trainer: il_ppo_b, il_ppo_b, il_ppo_b, il_ppo_b, il_ppo_b, il_ppo_b, il_ppo_b, il_ppo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_mappo_b, il_ppo_c, il_ppo_c, il_ppo_c, il_ppo_c, il_ppo_c, il_ppo_c, il_ppo_c, il_ppo_c, il_mappo_c, il_mappo_c, il_mappo_c, il_mappo_c, il_mappo_c, il_mappo_c, il_mappo_c, il_mappo_c
+      _runs/_reward: global_only, global_only, global_only, global_only, global_only, global_only, global_only, global_only, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, global_only, global_only, global_only, global_only, global_only, global_only, global_only, global_only, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay, trace3_only_fast_decay
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed:  0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed:  0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7

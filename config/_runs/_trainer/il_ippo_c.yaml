@@ -1,0 +1,6 @@
+# @package _global_
+
+trainer:
+  ppo:
+    flavor: IPPO
+    module_input: central

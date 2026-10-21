@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - override /algorithm/trainable/nn: small_nn
+
+algorithm:
+  trainable:
+    flavor: mslim
+    mslim:
+      use_line_graph: true
+      pred_format: mean
+      pred_space: flat
+
+trainer:
+  il:
+    mslim:
+      link_weight_mse_variant: simple
+  ppo:
+    pi_max_kl: 0.0
+    pi_max_clip_fraction: 0.0
+    mslim:
+      exploration_mechanism: tmlr24

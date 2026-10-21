@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - override /trainer/ppo/reward: mixed
+  - override /trainer/ppo/reward/local_rewards: fast_decay_3node
+  - _self_

@@ -1,0 +1,4 @@
+# @package _global_
+
+device: cpu  # desired device for pytorch models and tensors
+cpus_per_task: 2

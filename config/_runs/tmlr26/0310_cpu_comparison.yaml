@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_trainer: il_ppo_c
+  - override /_runs/_eval_depl: cs
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0310_cpu_comparison
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_scenario: b4, geant2001
+    list_params:
+      train_inference_delay_scaling: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2
+      eval_inference_delay_scaling: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2
+      _runs/_algo: magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, ms, ms, ms, ms, ms, ms, ms, ms, magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, magnneto, ms, ms, ms, ms, ms, ms, ms, ms
+      algorithm.magnneto.seed: 1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1
+      module_init_seed: 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed:  0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed:  0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7

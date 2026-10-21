@@ -1,0 +1,5 @@
+defaults:
+  - default_attributes
+  - _self_
+
+fixed_attributes: True

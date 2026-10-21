@@ -1,0 +1,8 @@
+# @package _global_
+
+trainer:
+  ppo:
+    flavor: HVPPO
+    module_input: local
+  il:
+    interact_with_env: false

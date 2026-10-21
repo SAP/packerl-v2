@@ -1,0 +1,14 @@
+# Which method to use to obtain shortest paths, and their distances usable as auxiliary features. Options: "ospf" and "eigrp"
+sp_mode: "eigrp"
+
+# OSPF reference datarate value for calculating link weights (standard: 1e8)
+ospfw_ref_value: 100000000
+
+# EIGRP reference datarate value for calculating link weights (standard: 1e7)
+eigrp_ref_datarate: 10000000
+
+# EIGRP reference delay value for calculating link weights (standard: 10)
+eigrp_ref_delay: 10
+
+# EIGRP reference multiplier value for calculating link weights
+eigrp_ref_multiplier: 256

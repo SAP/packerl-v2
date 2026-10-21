@@ -7,5 +7,17 @@ SPDX-PackageComment = "The code in this project may include calls to APIs (\"API
 [[annotations]]
 path = "**"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 SAP SE or an SAP affiliate company and packerl-v2 contributors"
-SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "2026 SAP SE or an SAP affiliate company and packerl contributors"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+[[annotations]]
+path = "ns3-packerl/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 SAP SE or an SAP affiliate company and packerl contributors"
+SPDX-License-Identifier = "GPL-2.0-or-later"
+
+[[annotations]]
+path = ["baselines/magnneto/actor.py", "baselines/magnneto/environment.py"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026, BNN-UPC <guillermo.bernardez@upc.edu>"
+SPDX-License-Identifier = "MIT"

@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_scenario: geant2001
+  - override /_runs/_type: sanity_check
+  - override /logging: wandb_no_cli
+  - _self_
+
+exp_name: test_eval_depl
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_algo: ms, ms_tmlr24
+      _runs/_trainer: ppo_b, ppo_c
+      _runs/_scenario_mod: default, link_delay_500p
+    list_params:
+      module_init_seed: 0, 1
+      train_algo_seed: 2, 3
+      train_scen_seed: 4, 5

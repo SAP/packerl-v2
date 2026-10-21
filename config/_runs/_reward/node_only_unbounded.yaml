@@ -1,0 +1,6 @@
+# @package _global_
+
+defaults:
+  - override /trainer/ppo/reward: local_only
+  - override /trainer/ppo/reward/local_rewards: no_decay_unbounded
+  - _self_

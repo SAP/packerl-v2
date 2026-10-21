@@ -1,0 +1,19 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+    mslim:
+      pred_space: flat
+
+trainer:
+  ppo:
+    pi_clip_range: 0.1
+    pi_max_kl: 1.0
+    pi_max_clip_fraction: 0.05
+    mslim:
+      exploration_mechanism: path
+      K_rand: 3

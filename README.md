@@ -1,26 +1,44 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP/packerl-v2)](https://api.reuse.software/info/github.com/SAP/packerl-v2)
 
-# packerl-v2
+# PackeRL v2, Placer, and LOGGIA
 
-## About this project
+*PackeRL* is an RL training and evaluation framework for routing optimization in computer networks. 
+It leverages the [ns-3 network simulator](https://www.nsnam.org) for packet-level simulation dynamics. 
+PackeRL is designed to be modular and flexible, allowing for easy integration of new algorithms and network models.
 
-[TMLR 2026] Official implementation for "Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms".
+Besides PackeRL version 2 (the first version is available via https://github.com/SAP-archive/packerl), this repository comes with our new policy design *LOGGIA* and *Placer*, published in [TMLR 09.2026](https://openreview.net/pdf?id=jmk2SoQklg) and [MaLeNe 2026](https://arxiv.org/abs/2602.12798) respectively (check the papers for further info).
 
-## Requirements and Setup
+### Documentation / Getting started
 
-*Insert a short description what is required to get your project running...*
+Extensive documentation is available in the [documentation](doc/README.md). Please note that *LOGGIA*, in this codebase, is the evolution of *M-Slim* from the [PackeRL project](https://alrhub.github.io/packerl-website/) and denoted as `ms` in the experiment configurations (whereas the original *M-Slim* is denoted as `ms_tmlr24`).
 
-## Support, Feedback, Contributing
+### Citation
 
-This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP/packerl-v2/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](CONTRIBUTING.md).
+This repository is part of the LOGGIA project ([webpage](https://alrhub.github.io/loggia-website/), [paper](https://openreview.net/pdf?id=jmk2SoQklg)) published in TMLR 2026. If you use this framework or *LOGGIA* in your research, please
+cite the LOGGIA paper:
 
-## Security / Disclosure
-If you find any bug that may be a security problem, please follow our instructions at [in our security policy](https://github.com/SAP/packerl-v2/security/policy) on how to report it. Please do not create GitHub issues for security-related doubts or problems.
+```
+@article{
+boltres2026towards,
+title={Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms},
+author={Boltres, Andreas and Freymuth, Niklas and Schichtholz, Benjamin and K{\"o}nig, Michael and Neumann, Gerhard},
+journal={Transactions on Machine Learning Research},
+year={2026},
+url={https://openreview.net/forum?id=jmk2SoQklg}
+}
+```
 
-## Code of Conduct
+Additionally, if you use *Placer* in your research, please cite the following paper:
 
-We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone. By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/SAP/.github/blob/main/CODE_OF_CONDUCT.md) at all times.
+```
+@inproceedings{boltres2026can,
+  title={Can Neural Networks Provide Latent Embeddings for Telemetry-Aware Greedy Routing?},
+  author={Boltres, Andreas and Freymuth, Niklas and Neumann, Gerhard},
+  booktitle={7th KuVS Fachgespr{\"a}ch on Machine Learning in Networking (MaLeNe)},
+  year={2026},
+  url={https://arxiv.org/abs/2602.12798}
+}
+```
 
-## Licensing
+### Development/Maintenance Notice
 
-Copyright 2026 SAP SE or an SAP affiliate company and packerl-v2 contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/packerl-v2).
+Please note that this is a research artifact and will thus not receive customer-facing maintenance or support.

@@ -1,0 +1,5 @@
+defaults:
+  - default_graph
+  - _self_
+
+mode: ["magnneto"]

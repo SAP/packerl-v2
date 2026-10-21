@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - override /algorithm/trainable/nn: small_nn
+
+algorithm:
+  trainable:
+    fieldlines:
+      actor_design: tmlr24
+
+trainer:
+  ppo:
+    pi_max_kl: 0.0
+    pi_max_clip_fraction: 0.0
+    fieldlines:
+      exploration_mechanism: eps_greedy

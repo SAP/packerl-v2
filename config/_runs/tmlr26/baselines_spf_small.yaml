@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: tmlr26_baselines
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_algo: spf_eigrp, spf_ospf, spf_rip
+      _runs/_scenario: abilene, b4, m5, nx_xs, nx_s, geant2001
+      _runs/_scenario_mod: default, buffer_50p, buffer_200p, link_delay_500p, time_2s_2ms, time_2s_10ms

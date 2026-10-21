@@ -1,0 +1,13 @@
+# @package _global_
+
+train_scenario:
+  ep_length: 1000
+  ms_per_step: 2
+
+validation_scenario:
+  ep_length: 1000
+  ms_per_step: 2
+
+eval_scenario:
+  ep_length: 1000
+  ms_per_step: 2

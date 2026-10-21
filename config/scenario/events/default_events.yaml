@@ -1,0 +1,3 @@
+defaults:
+  - traffic: default_traffic  # we default to 80% TCP traffic
+  - link_failures: default_link_failures

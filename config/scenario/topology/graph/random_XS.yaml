@@ -1,0 +1,7 @@
+defaults:
+  - default_graph
+  - _self_
+
+mode: [ "erdos_renyi", "watts_strogatz", "barabasi_albert" ]
+min_nodes: 6
+max_nodes: 10

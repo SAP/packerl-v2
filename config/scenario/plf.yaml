@@ -1,0 +1,12 @@
+defaults:
+  - default_scenario
+  - override topology/attributes: fixed_attributes
+  - _self_
+
+topology:
+  graph:
+    mode: "plf"
+
+events:
+  traffic:
+    mode: "plf"

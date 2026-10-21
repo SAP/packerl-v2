@@ -1,0 +1,5 @@
+defaults:
+  - default_logging
+  - _self_
+
+log_level: "none"

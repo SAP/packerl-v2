@@ -1,0 +1,5 @@
+defaults:
+  - _base_reward
+  - _self_
+
+global_to_local_reward_ratio: 0.5

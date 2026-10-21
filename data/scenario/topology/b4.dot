@@ -1,0 +1,31 @@
+// B4 Topology with 12 nodes and 19 links.
+//
+// Original paper: Bogle, Jeremy, et al. "TEAVAR: striking the right utilization-availability balance in
+//   WAN traffic engineering." Proceedings of the ACM Special Interest Group on Data Communication. 2019. 29-43.
+//
+// Taken from https://github.com/manyaghobadi/teavar/blob/master/code/data/B4/topology.txt on 20 Jan '26 and modified:
+//   -- converted into undirected graph in dotfile (all links were bidirectional)
+//   -- 'capacity' renamed as 'datarate' and converted to bps
+
+graph G {
+
+   0 --  1 [datarate=5000000000, prob_failure="0.004"];
+   0 --  2 [datarate=5000000000, prob_failure="0.004"];
+   1 --  4 [datarate=5000000000, prob_failure="0.004"];
+   2 --  3 [datarate=5000000000, prob_failure="0.004"];
+   2 --  5 [datarate=5000000000, prob_failure="0.004"];
+   3 --  4 [datarate=5000000000, prob_failure="0.004"];
+   3 --  6 [datarate=5000000000, prob_failure="0.004"];
+   3 --  7 [datarate=5000000000, prob_failure="0.004"];
+   4 --  5 [datarate=5000000000, prob_failure="0.004"];
+   5 --  6 [datarate=5000000000, prob_failure="0.004"];
+   5 --  7 [datarate=5000000000, prob_failure="0.004"];
+   6 --  7 [datarate=5000000000, prob_failure="0.004"];
+   6 -- 10 [datarate=5000000000, prob_failure="0.004"];
+   7 --  9 [datarate=5000000000, prob_failure="0.004"];
+   8 --  9 [datarate=5000000000, prob_failure="0.004"];
+   8 -- 10 [datarate=5000000000, prob_failure="0.004"];
+   9 -- 10 [datarate=5000000000, prob_failure="0.004"];
+   9 -- 11 [datarate=5000000000, prob_failure="0.004"];
+  10 -- 11 [datarate=5000000000, prob_failure="0.004"];
+}

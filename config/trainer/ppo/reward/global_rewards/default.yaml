@@ -1,0 +1,3 @@
+# global reward weights (see utils.shared_memory.conversion.py.global_reward_weights_to_ctype() for possible keys)
+
+delivered: 1.0

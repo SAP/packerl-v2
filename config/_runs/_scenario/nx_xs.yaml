@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - _multi_topo
+  - override /scenario@train_scenario: random_XS
+  - override /scenario@validation_scenario: random_XS
+  - override /scenario@eval_scenario: random_XS
+  - _self_

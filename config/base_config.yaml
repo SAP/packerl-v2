@@ -1,0 +1,84 @@
+defaults:
+  - algorithm: default_algorithm
+  - logging: default_logging
+  - platform: local_cpu
+  - scenario@train_scenario: default_scenario
+  - scenario@validation_scenario: default_scenario
+  - scenario@eval_scenario: default_scenario
+  - shortest_paths: default_shortest_paths
+  - trainer: default_trainer
+  - visualization: default_vis  # turned off by default
+  - _self_
+  - override hydra/sweeper: list
+
+
+# Base directory for all outputs
+base_dir: ../packerl_out
+
+# Experiment name
+exp_name: ???
+
+# Version of this specific experiment. Increment if you run different experiments with the same exp_name
+_version: 1
+
+# Identifier of the experiment.
+# Each semantic experiment ("Baseline with X parameters") should have a unique idx across all tasks and repetitions
+idx: "0"
+
+# Module initialization random seed (if set to null, uses train_algo_seed)
+module_init_seed: 0
+
+# Training random seed (e.g. RL exploration/sampling)
+train_algo_seed: 0
+
+# rng seeds for scenario generation
+train_scen_seed: 0
+vali_scen_seed: 9000  # just keep this fixed unless you know what you are doing
+eval_scen_seed: 9001  # just keep this fixed unless you know what you are doing
+
+# validation and evaluation
+validate_every: 5  # validate algorithm after every N training iterations (across all trainers)
+validation_topologies: ???  # number of different topologies to use during validation
+validation_event_seqs_per_topology: ???  # number of different event sequences per topology during validation
+
+eval_only: false  # if true, skip training and only run evaluation
+eval_topologies: ???  # Number of evaluations (i.e. episodes on different scenarios) per run
+eval_event_seqs_per_topology: ???  # number of different event sequences per topology during evaluation
+
+eval_agent_loc: "single"  # algorithm deployment location during evaluation and validation.
+eval_observer_loc: "birdseye"  # algorithm input during evaluation and validation.
+
+# routing action installation delay scaling factors. 0.2 e.g. means that 20% of the inference delay is added to the overall action installation delay.
+train_inference_delay_scaling: 0.2
+eval_inference_delay_scaling: 0.2
+
+# if specified, profile the execution of the run on the python side,
+# and store the results in a file called profiling_py.prof.
+profiling_py: false
+
+# if specified, profile the execution of each run on the C++ side,
+# and store the results in one file per run called profiling_cpp_run<id>.data.
+profiling_cpp: false
+
+# if specified, interrupt the program flow briefly after the first reset
+# to give the opportunity to attach gdb to the ns3 process.
+attach_gdb: false
+
+# if specified, we don't run the experiment. Instead, we print the resulting configuration to the console and exit.
+only_print_config: false
+
+# hydra configuration
+hydra:
+  sweep:
+    dir: ${base_dir}/${now:%Y-%m-%d--%H-%M-%S}_${exp_name}
+    subdir: ${sub_dir_shortener:${sweeper_override_dirname:}, 3, False}/seeds_mi${format:${module_init_seed}, '{:02d}'}_al${format:${train_algo_seed}, '{:02d}'}_sc${format:${train_scen_seed}, '{:02d}'}
+  run:
+    # Mimic sweep config layout for consistent save&load
+    dir: ${base_dir}/${now:%Y-%m-%d--%H-%M-%S}_${exp_name}/singleton/seeds_mi${format:${module_init_seed}, '{:02d}'}_al${format:${train_algo_seed}, '{:02d}'}_sc${format:${train_scen_seed}, '{:02d}'}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - module_init_seed
+          - train_algo_seed
+          - train_scen_seed

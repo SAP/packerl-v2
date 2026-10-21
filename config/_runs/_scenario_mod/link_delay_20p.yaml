@@ -1,0 +1,19 @@
+# @package _global_
+
+train_scenario:
+  buffer_size_bdp: 5.0
+  topology:
+    attributes:
+      delay_stretch: 0.2
+
+validation_scenario:
+  buffer_size_bdp: 0.2
+  topology:
+    attributes:
+      delay_stretch: 0.2
+
+eval_scenario:
+  buffer_size_bdp: 5.0
+  topology:
+    attributes:
+      delay_stretch: 0.2

@@ -1,0 +1,17 @@
+exploration_mechanism: "new"  # "new" or "tmlr24"
+
+# target entropy per edge for the policy network (used for entropy regularization in 'new' mechanism)
+target_entropy_per_edge: 0.2
+
+# parameters for the 'path' exploration mechanism
+target_entropy_factor_per_node_pair: 0.7  # target entropy scaling (target ent. is log(#valid_paths) * this)
+K_top: 5  # Number of top paths to consider
+K_rand: 0  # Number of random paths to consider
+rand_perturbation_scaling: 1.0  # Scaling for random perturbations added to path scores when sampling random paths
+path_tau: 1.0  # Temperature for path sampling distributions
+
+# Discrete TRPL parameters (only used if use_trpl is True)
+use_trpl: false
+trpl_target_kl: 0.5  # Target KL divergence for early stopping of TRPL policy updates (if use_trpl is True)
+trpl_alpha: 0.1  # Coefficient for TRPL projection loss (encouraging the new policy to stay close to the old policy in terms of KL divergence).
+trpl_ent_coeff: 0.000  # Coefficient for entropy regularization in TRPL updates (if use_trpl is True)

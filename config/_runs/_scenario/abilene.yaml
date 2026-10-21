@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - _single_topo
+  - override /scenario@train_scenario: tz_abilene
+  - override /scenario@validation_scenario: tz_abilene
+  - override /scenario@eval_scenario: tz_abilene
+  - _self_

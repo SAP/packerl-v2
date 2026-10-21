@@ -1,0 +1,4 @@
+defaults:
+  - default_traffic
+  - override prob_tcp: 1.0
+  - override traffic_scaling: 3.0

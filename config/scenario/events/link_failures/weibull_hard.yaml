@@ -1,0 +1,4 @@
+defaults:
+  - default_link_failures
+  - override mode: weibull
+  - override mode_configs/weibull/scale: 5.0e-3

@@ -1,0 +1,19 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_scenario: nx_xs
+  - override /_runs/_type: sanity_check
+  - override /logging: wandb_no_cli
+  - _self_
+
+exp_name: test_algo
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_algo: fl_boltzmann, fl_eps_greedy, fl_full_pi_updates, fl_ne_cs_boltzmann, fl_ne_hb_boltzmann, fl_ne_sb_boltzmann, fl_old_actor, fl_old_boltzmann, fl_small_nn, fl_tmlr24_adaptive_pi_updates, fl_tmlr24_big_nn, fl_tmlr24_new_actor, fl_tmlr24_new_boltzmann, fl_tmlr24_new_eps_greedy, fl_tmlr24, ms_flat_space, ms_full_pi_updates, ms_line_graph, ms_old_exploration, ms_path, ms_path_rand3, ms_path_rand3_trpl, ms_path_trpl, ms_simple_il, ms_small_nn, ms_tmlr24_adaptive_pi_updates, ms_tmlr24_base_graph, ms_tmlr24_big_nn, ms_tmlr24_dualnorm_il, ms_tmlr24_log_space, ms_tmlr24_new_exploration, ms_tmlr24, pl_boltzmann, pl_eps_greedy, pl_no_geom_boltzmann, pl_no_geom_eps_greedy
+    list_params:
+      _runs/_trainer: il_ppo_b, bc_mappo_c, ippo_l, hvppo_b
+      _runs/_reward: global_only, mixed_node1, trace3_only_fast_decay, node_only_unbounded
+      _runs/_eval_depl: bm, cs, lm, cm

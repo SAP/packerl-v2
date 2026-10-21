@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_trainer: il_mappo_c
+  - override /_runs/_reward: trace3_only_fast_decay
+  - override /_runs/_scenario: b4
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - override /logging: wandb_offline_no_cli
+  - _self_
+
+exp_name: 0310_champs
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_algo: fl_tmlr24, ms_tmlr24, ms
+      _runs/_scenario_mod: default, buffer_50p, buffer_200p, time_2s_2ms, time_2s_10ms
+    list_params:
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed: 0, 1, 2, 3, 4, 5, 6, 7

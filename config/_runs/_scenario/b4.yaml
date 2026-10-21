@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - _single_topo
+  - override /scenario@train_scenario: dot_b4
+  - override /scenario@validation_scenario: dot_b4
+  - override /scenario@eval_scenario: dot_b4
+  - _self_

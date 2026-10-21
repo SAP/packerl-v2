@@ -1,0 +1,10 @@
+exploration_mechanism: "boltzmann"  # "eps_greedy", "boltzmann"
+style: "new"  # "new", "tmlr24"
+
+# epsilon-greedy exploration strategy
+initial_epsilon: 0.5
+epsilon_decay: 0.925
+min_epsilon: 0.01
+
+# target_entropy scale for next-hop designs
+entropy_nexthop_kappa: 0.7

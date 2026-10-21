@@ -1,0 +1,16 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    fieldlines:
+      actor_design: tmlr24
+
+trainer:
+  ppo:
+    pi_max_kl: 0.0
+    pi_max_clip_fraction: 0.0
+    fieldlines:
+      style: tmlr24

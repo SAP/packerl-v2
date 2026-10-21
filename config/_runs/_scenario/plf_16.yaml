@@ -1,0 +1,27 @@
+# @package _global_
+# Run config for a scenario using the PLF topology family with inner_depth=16
+
+defaults:
+  - _plf
+  - _self_
+
+train_scenario:
+  topology:
+    graph:
+      mode_configs:
+        plf:
+          inner_depth: 16
+
+validation_scenario:
+  topology:
+    graph:
+      mode_configs:
+        plf:
+          inner_depth: 16
+
+eval_scenario:
+  topology:
+    graph:
+      mode_configs:
+        plf:
+          inner_depth: 16

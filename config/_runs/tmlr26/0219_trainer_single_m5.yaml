@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: ms
+  - override /_runs/_scenario: m5
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0219_trainer
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_trainer: none, bc, il, ppo_b, ppo_c, bc_ppo_b, bc_ppo_c, il_ppo_b, il_ppo_c
+      _runs/_scenario_mod: default, link_delay_500p
+    list_params:
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed: 0, 1, 2, 3, 4, 5, 6, 7

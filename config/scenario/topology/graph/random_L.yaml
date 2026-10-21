@@ -1,0 +1,7 @@
+defaults:
+  - default_graph
+  - _self_
+
+mode: [ "erdos_renyi", "watts_strogatz" ]  # barabasi_albert graphs become unsuitable for large node counts
+min_nodes: 51
+max_nodes: 100

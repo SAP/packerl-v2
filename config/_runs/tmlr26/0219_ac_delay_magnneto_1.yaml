@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: magnneto
+  - override /_runs/_scenario: b4
+  - override /_runs/_scenario_mod: default
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0219_ac_delay
+
+hydra:
+  sweeper:
+    grid_params:
+      algorithm.magnneto.seed: 1, 2, 3, 4, 5, 6, 7, 8
+      eval_inference_delay_scaling: 0, 0.2, 0.4, 0.6, 0.8, 1.0
+      _runs/_eval_depl: bs, cs

@@ -1,0 +1,13 @@
+#version: "3"
+
+services:
+  packerl:
+    container_name: packerl
+    build: .
+    volumes:
+      - ./:/packerl:rw    
+      - packerl_build_data:/packerl/ns3/build:rw
+    command: tail -f /dev/null
+
+volumes:
+    packerl_build_data:

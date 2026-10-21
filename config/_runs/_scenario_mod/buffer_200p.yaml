@@ -1,0 +1,10 @@
+# @package _global_
+
+train_scenario:
+  buffer_size_bdp: 2.0
+
+validation_scenario:
+  buffer_size_bdp: 2.0
+
+eval_scenario:
+  buffer_size_bdp: 2.0

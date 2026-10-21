@@ -1,0 +1,8 @@
+defaults:
+  - magnneto: default_magnneto
+  - spf: default_spf
+  - trainable: default_trainable
+  - _self_
+
+# train/evaluate a routing policy in pytorch ("trainable"), or evaluate any of the provided baselines
+routing_algorithm: "trainable"

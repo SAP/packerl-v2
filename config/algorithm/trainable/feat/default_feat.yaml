@@ -1,0 +1,26 @@
+# each letter stands for a category of features. Options: see utils/features.py
+global_features: "bcdl"
+
+# each letter stands for a category of features. Options: see utils/features.py
+node_features: "bcd"
+
+# if true, only use node features that do not require information about other nodes to be calculated
+node_ego_features_only: true
+
+# next-hop based policies only: whether to use the shortest path dist. to destination as additional node input feature
+spdist_as_input: true
+
+# which method to use to calculate the shortest path distance auxiliary feature ("ospf", "eigrp", "delay")
+spdist_mode: "eigrp"
+
+# each letter stands for a category of features. Options: see utils/features.py
+edge_features: "scl"
+
+# link-weight based policies: whether to use past link weights as additional edge input feature
+link_weights_as_input: true
+
+# initialization of the past link weights tensor. "ones", "zeros" or "random"
+link_weights_as_input_mode: "zeros"
+
+# whether to store the log of past link weights instead of the raw values (applies to log-space link weight predictors only)
+link_weights_as_input_store_log: false

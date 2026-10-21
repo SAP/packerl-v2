@@ -1,0 +1,6 @@
+graph G {
+    0 -- 1 [datarate=1000000000, delay=5];
+    1 -- 3 [datarate=200000000, delay=5];
+    0 -- 2 [datarate=200000000, delay=5];
+    2 -- 3 [datarate=10000000, delay=5];
+}

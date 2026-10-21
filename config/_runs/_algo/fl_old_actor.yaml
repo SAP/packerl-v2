@@ -1,0 +1,9 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    fieldlines:
+      actor_design: tmlr24

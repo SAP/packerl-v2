@@ -1,0 +1,38 @@
+latent_dimension: 32
+
+# configuration for MLPs OUTSIDE the MPN
+mlp:
+  activation_function: leakyrelu
+  num_layers: 2
+  add_output_layer: False
+  regularization:
+    dropout: 0
+    spectral_norm: False
+    latent_normalization: null
+
+# base configuration for MPN
+mpn:
+  # which scatter reducers to use.
+  # Maybe a single element of ["mean", "sum", "max", "min"] or a list of these for multiple scatter operation.
+  scatter_reduce: [ "mean", "min" ]
+
+  stack:
+    # which kind of layer normalization to use. null/None for no layer norm,
+    # "outer" for layer norm around each full message passing step, "inner" for layer norm after each message
+    layer_norm: inner
+
+    # same as layer_norm, but for residual connections
+    residual_connections: inner
+
+    # number of message passing Steps to use
+    num_steps: 4
+
+    # configuration for the MLPs INSIDE the MPN
+    step_mlp:
+      activation_function: leakyrelu
+      num_layers: 2
+      add_output_layer: False
+      regularization:
+        dropout: 0
+        spectral_norm: False
+        latent_normalization: null

@@ -1,0 +1,10 @@
+# local reward parameters
+
+# spatial decay factor for local rewards
+spatial_decay: 1.0
+
+# maximum number of hops in a path to consider for local rewards (0 = no cutoff)
+path_cutoff: 0
+
+# if true, scale the sum of local rewards by the number of bytes sent
+cap_to_bytes: true

@@ -1,0 +1,29 @@
+name: packerl
+channels:
+  - conda-forge
+dependencies:
+  - c-compiler
+  - cxx-compiler
+  - cmake>3.10
+  - make
+  - python=3.12
+  - pip
+  - graphviz
+  - pip:
+      - numpy==2.0.2
+      - hydra-submitit-launcher
+      - hydra_list_sweeper==1.1.0
+      - flatdict
+      - pydot==3.0.4
+      - wandb
+      - tqdm
+      - networkx==3.5
+      - matplotlib
+      - geopy
+      - scipy
+      - pydantic
+      - pyproj
+      - pytest
+      - pyyaml
+
+# NOTE: pytorch stack installed in install.sh to enable platform-specific installation

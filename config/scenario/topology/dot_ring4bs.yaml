@@ -1,0 +1,4 @@
+defaults:
+  - default_topology
+  - override attributes: fixed_attributes
+  - override graph: dot_ring4bs

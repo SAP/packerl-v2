@@ -1,0 +1,5 @@
+# @package _global_
+
+defaults:
+  - override /trainer/ppo/reward: local_only
+  - _self_

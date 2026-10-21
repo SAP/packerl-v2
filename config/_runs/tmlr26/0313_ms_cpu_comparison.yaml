@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_trainer: il_ppo_c
+  - override /_runs/_algo: ms
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0313_ms_cpu_comparison
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_scenario: b4, geant2001
+    list_params:
+      train_inference_delay_scaling: 0, 0, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+      eval_inference_delay_scaling:  0, 0, 0, 0, 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed:  0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed:  0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7

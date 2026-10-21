@@ -1,0 +1,3 @@
+# The MAGNNETO baseline uses models that have been trained on random seeds 1-16.
+# This value specifies which model to use.
+seed: 1

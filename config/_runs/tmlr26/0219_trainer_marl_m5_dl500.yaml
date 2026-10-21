@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: ms
+  - override /_runs/_scenario: m5
+  - override /_runs/_scenario_mod: link_delay_500p
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0219_trainer
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_trainer: il_mappo_c, il_mappo_l, il_ippo_c, il_ippo_l, il_hvppo_c, il_hvppo_l
+      _runs/_reward: global_only, trace3_only_fast_decay, mixed_trace3_fast_decay
+    list_params:
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed: 0, 1, 2, 3, 4, 5, 6, 7

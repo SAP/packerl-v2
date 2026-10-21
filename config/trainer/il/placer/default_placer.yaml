@@ -1,0 +1,2 @@
+# weight of geometric loss (pairwise shortest paths distance discrepancy) in imitation learning
+geom_loss_weight: 0.1

@@ -1,0 +1,64 @@
+# minimum number of nodes in the network (only applicable to random graph generators)
+min_nodes: 6
+
+# maximum number of nodes in the network (only applicable to random graph generators)
+max_nodes: 10
+
+# graph generation mode. Can be single str or list of str
+mode: [ "erdos_renyi", "watts_strogatz", "barabasi_albert"]
+
+# Configuration for the different graph generation modes
+mode_configs:
+
+  # - Erdos-Renyi random graph model
+  erdos_renyi:
+
+    # -- average node degree in the resulting graph
+    num_attachments: 3
+
+  # - Watts-Strogatz small-world model
+  watts_strogatz:
+
+    # -- Number of attachments per node
+    num_attachments: 4
+
+    # -- probability of rewiring each edge
+    rewire_probability: 0.3
+
+  # - Barabasi-Albert scale-free model (preferential attachment)
+  barabasi_albert:
+
+    # -- Number of attachments per node
+    num_attachments: 2
+
+  # - Configuration for loading network topologies from the TopologyZoo collection
+  topology_zoo:
+
+    # -- if True, the topologies are loaded in alphabetical order (re-starting if the end is reached)
+    in_order: True
+
+    # -- if not 'all', only load the specified network
+    network: "all"
+
+  # - load network topologies available from the MAGNNETO publication
+  magnneto:
+
+    # -- list of network topologies to load (random choice)
+    networks: [ "NSFNet", "GEANT2" ]
+
+  static_dot:
+
+    # -- path to the dot file to load
+    dot_file: "data/scenario/topology/ring4bs.dot"
+
+  # - create graphs from the family of pyramid lattice funnels
+  plf:
+
+    # -- number of levels between source and destination node in the pyramid lattice funnel
+    inner_depth: 3
+    # bisection bandwidth specifies how much summed capacity the links of a layer have to the next layer, which is
+    # equal to the amount of data that will be pushed through the scenario.
+    # Since it will be UDP packets only, we specify it as multiples of 11776 bps (1 UDP payload = 1472 B = 11776 b).
+    # In total, we send 65536 packets/s (e.g. 32768 p/s each for 2 flows (min.), 1 p/s each for 65536 flows (max.))
+    bisection_bandwidth: 771751936  # 772 Mbps
+    flat_delay_ms: 5  # each link has 5 ms base delay

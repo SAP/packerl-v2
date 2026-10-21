@@ -1,0 +1,11 @@
+# Base reward configuration for a reinforcement learning environment
+defaults:
+  - global_rewards: default  # global reward weights
+  - local_rewards: no_decay_1node
+  - _self_
+
+# ratio of global to local reward in actual reward awarded to agents (1.0: global only, 0.0: local only)
+global_to_local_reward_ratio: ???
+
+# whether to normalize rewards for the learning algorithm.
+normalize: false

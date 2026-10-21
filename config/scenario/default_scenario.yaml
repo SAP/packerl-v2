@@ -1,0 +1,19 @@
+defaults:
+  - topology: default_topology
+  - events: default_events
+  - _self_
+
+# buffer size in multiples of BDPs (bandwidth-delay products (bandwidth-RTT-product, to be precise))
+buffer_size_bdp: 1
+
+# whether to use TCP SACK in the ns-3 simulation
+use_tcp_sack: false
+
+# number of simulation steps per episode
+ep_length: 400
+
+# network time simulated per step (in milliseconds)
+ms_per_step: 5.0
+
+# sample scenario values uniform from [1-deviation, 1+deviation]
+rng_uniform_deviation: 0.1

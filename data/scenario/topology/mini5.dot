@@ -1,0 +1,20 @@
+graph G {
+
+  traffic_scaling="8.0";
+
+  // Nodes with fixed positions (x,y)
+  0 [pos="0,0!"];
+  1 [pos="0,1!"];
+  2 [pos="1,0!"];
+  3 [pos="0,-1!"];
+  4 [pos="-1,0!"];
+
+  // Undirected edges with attributes
+  0 -- 1 [datarate=200000000, delay=4];
+  0 -- 2 [datarate=200000000, delay=3];
+  0 -- 3 [datarate=200000000, delay=3];
+  1 -- 2 [datarate=100000000, delay=5];
+  1 -- 4 [datarate=80000000,  delay=8];
+  2 -- 3 [datarate=80000000,  delay=5];
+  3 -- 4 [datarate=100000000, delay=8];
+}

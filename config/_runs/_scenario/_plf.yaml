@@ -1,0 +1,34 @@
+# @package _global_
+# Run config for a scenario using the PLF topology family
+
+defaults:
+  - override /scenario@train_scenario: plf
+  - override /scenario@validation_scenario: plf
+  - override /scenario@eval_scenario: plf
+  - _self_
+
+# PLF scenarios are deterministic, so one episode is enough
+validation_topologies: 1
+validation_event_seqs_per_topology: 1
+
+eval_topologies: 1
+eval_event_seqs_per_topology: 1
+
+train_scenario:
+  ep_length: 200
+
+validation_scenario:
+  ep_length: 200
+
+eval_scenario:
+  ep_length: 200
+
+trainer:
+  ppo:
+    num_topologies: 1  # it's just one fixed topology
+    num_event_seqs_per_topology: 1  # events are also fixed
+    num_event_seq_repeats: 16
+  il:
+    num_topologies: 1  # it's just one fixed topology
+    num_event_seqs_per_topology: 1  # events are also fixed
+    num_event_seq_repeats: 1

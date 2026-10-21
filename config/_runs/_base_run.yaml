@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - /_runs/_algo: ms
+  - /_runs/_reward: global_only
+  - /_runs/_trainer: il_ppo_b
+  - /_runs/_eval_depl: bs
+  - /_runs/_scenario: m5
+  - /_runs/_scenario_mod: default  # may override some fields of the scenario
+  - /_runs/_type: sanity_check  # may override some fields of scenario and trainer
+  - _self_

@@ -1,0 +1,13 @@
+defaults:
+  - il: default_il
+  - ppo: default_ppo
+  - _self_
+
+# a list of trainer names. Each trainer is called in order to train a trainable algorithm
+trainers: "il,ppo"
+
+# Gradient clipping norm
+max_grad_norm: 0.5
+
+# Whether to reset the scenario generator RNG before each training iteration
+fixed_scenarios: false

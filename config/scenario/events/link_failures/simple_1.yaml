@@ -1,0 +1,3 @@
+defaults:
+  - default_link_failures
+  - override mode: simple

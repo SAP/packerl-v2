@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: ms
+  - override /_runs/_scenario: nx_xs
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: sanity_check
+  - override /logging: wandb_no_cli
+  - _self_
+
+exp_name: test_marl
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_trainer: mappo_b, mappo_c, mappo_l, ippo_b, ippo_c, ippo_l, hvppo_b, hvppo_c, hvppo_l, il_mappo_b, il_mappo_c, il_mappo_l, il_ippo_b, il_ippo_c, il_ippo_l, il_hvppo_b, il_hvppo_c, il_hvppo_l
+      _runs/_reward: global_only, mixed_node1, mixed_node_unbounded, mixed_trace3, node_only, node_only_unbounded, trace3_only, trace3_only_fast_decay

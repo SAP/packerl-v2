@@ -1,0 +1,9 @@
+defaults:
+  - default_graph
+  - _self_
+  
+mode: [ "static_dot" ]
+
+mode_configs:
+  static_dot:
+    dot_file: "data/scenario/topology/mini5.dot"

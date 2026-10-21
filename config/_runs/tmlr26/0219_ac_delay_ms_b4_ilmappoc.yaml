@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: ms
+  - override /_runs/_trainer: il_mappo_c
+  - override /_runs/_reward: mixed_trace3_fast_decay
+  - override /_runs/_scenario: b4
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0219_ac_delay
+
+hydra:
+  sweeper:
+    grid_params:
+      train_inference_delay_scaling: 0, 0.2, 0.4, 0.6, 0.8, 1.0
+      _runs/_scenario_mod: default, link_delay_500p
+    list_params:
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed: 0, 1, 2, 3, 4, 5, 6, 7

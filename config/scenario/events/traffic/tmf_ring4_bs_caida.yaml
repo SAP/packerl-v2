@@ -1,0 +1,16 @@
+defaults:
+  - default_traffic
+  - _self_
+
+prob_tcp: 0.0
+
+max_flow_size: 1_000_000
+
+mode: tm_flowparams
+
+mode_configs:
+  tm_flowparams:
+    tm_path: data/scenario/events/tm/ring4_bs.txt
+    flowparams_path: data/scenario/events/flowparams/caida.json
+    interarrival_time_scaling: 4000
+    flowsize_scaling: 0.1

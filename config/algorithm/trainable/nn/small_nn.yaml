@@ -1,0 +1,9 @@
+defaults:
+  - default_nn
+  - _self_
+
+latent_dimension: 12
+
+base:
+  stack:
+    num_steps: 2

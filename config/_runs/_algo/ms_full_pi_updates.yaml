@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+
+trainer:
+  ppo:
+    pi_max_kl: 0.0
+    pi_max_clip_fraction: 0.0

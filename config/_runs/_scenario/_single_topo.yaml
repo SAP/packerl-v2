@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+validation_topologies: 1  # diag scenarios have just one fixed topology
+validation_event_seqs_per_topology: 10
+
+eval_topologies: 1
+eval_event_seqs_per_topology: 30
+
+trainer:
+  ppo:
+    num_topologies: 1  # diag scenarios have just one fixed topology
+    num_event_seqs_per_topology: 4
+    num_event_seq_repeats: 4
+  il:
+    num_topologies: 1  # diag scenarios have just one fixed topology
+    num_event_seqs_per_topology: 16
+    num_event_seq_repeats: 1

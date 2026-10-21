@@ -1,0 +1,16 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: spf_rip
+  - override /_runs/_type: sanity_check
+  - override /logging: wandb_no_cli
+  - _self_
+
+exp_name: test_scen
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_scenario: abilene, b4, m5, nx_xs, nx_s, plf_01, plf_02, plf_03, plf_04, geant2001, nx_m, plf_08, plf_12, nx_l, nx_xl, plf_16
+      _runs/_scenario_mod: default, buffer_50p, link_delay_500p, time_2s_10ms

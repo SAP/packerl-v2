@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: submitit_local
+
+device: cpu  # desired device for pytorch models and tensors
+
+hydra:
+  mode: MULTIRUN
+  launcher:
+    cpus_per_task: 2
+    timeout_min: 14400  # 10 days
+    stderr_to_stdout: true

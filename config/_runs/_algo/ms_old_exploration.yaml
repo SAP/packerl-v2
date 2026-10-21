@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+algorithm:
+  trainable:
+    flavor: mslim
+
+trainer:
+  ppo:
+    mslim:
+      exploration_mechanism: tmlr24

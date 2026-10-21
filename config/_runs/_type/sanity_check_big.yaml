@@ -1,0 +1,30 @@
+# @package _global_
+
+validate_every: 3
+validation_topologies: 2
+
+eval_topologies: 5
+eval_event_seqs_per_topology: 1
+
+train_scenario:
+  ep_length: 30
+
+validation_scenario:
+  ep_length: 30
+
+eval_scenario:
+  ep_length: 30
+
+trainer:
+  ppo:
+    iterations: 20
+    num_topologies: 2
+    num_event_seqs_per_topology: 2
+    num_event_seq_repeats: 1
+    update_epochs: 5
+    num_minibatches: 15  # compatible with episode length of 30
+  il:
+    iterations: 6
+    num_topologies: 3
+    num_event_seqs_per_topology: 2
+    num_event_seq_repeats: 1

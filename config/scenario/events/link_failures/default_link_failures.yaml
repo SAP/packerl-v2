@@ -1,0 +1,14 @@
+# Link failure mode specified as string. By default, no link failures
+mode: "none"
+
+# Nested configuration for different link failure modes
+mode_configs:
+
+  # Simple mode for generating link failures evenly spaced out over the time steps
+  simple:
+    num_failures: 1
+
+  # Generating link failure times using a Weibull distribution
+  weibull:
+    scale: 1.0e-3
+    shape: 0.8

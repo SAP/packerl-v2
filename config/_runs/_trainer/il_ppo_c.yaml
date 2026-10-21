@@ -1,0 +1,5 @@
+# @package _global_
+
+trainer:
+  ppo:
+    module_input: central

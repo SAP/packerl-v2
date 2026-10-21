@@ -1,0 +1,2 @@
+# specifies which shortest path first algorithm to use ("eigrp", "ospf", "delay")
+mode: "eigrp"

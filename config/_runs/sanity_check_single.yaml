@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - _base_run
+  - _self_
+
+exp_name: sanity_check_single
+
+hydra:  # just for reference - if you run this locally, you actually won't start a sweep and this section is ignored
+  sweeper:
+    grid_params:
+      train_algo_seed: 0
+      train_scen_seed: 0

@@ -1,0 +1,8 @@
+# @package _global_
+
+trainer:
+  ppo:
+    flavor: MAPPO
+    module_input: central
+  il:
+    interact_with_env: false

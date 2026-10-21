@@ -1,0 +1,31 @@
+# @package _global_
+
+validate_every: 1
+validation_topologies: 1
+validation_event_seqs_per_topology: 1
+
+eval_topologies: 1
+eval_event_seqs_per_topology: 1
+
+train_scenario:
+  ep_length: 4
+
+validation_scenario:
+  ep_length: 3
+
+eval_scenario:
+  ep_length: 5
+
+trainer:
+  ppo:
+    iterations: 2
+    num_topologies: 2
+    num_event_seqs_per_topology: 1
+    num_event_seq_repeats: 1
+    update_epochs: 2
+    num_minibatches: 4
+  il:
+    iterations: 2
+    num_topologies: 2
+    num_event_seqs_per_topology: 1
+    num_event_seq_repeats: 1

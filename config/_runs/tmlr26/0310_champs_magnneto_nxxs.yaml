@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_algo: magnneto
+  - override /_runs/_scenario: nx_xs
+  - override /_runs/_eval_depl: cs
+  - override /_runs/_type: regular
+  - override /logging: wandb_offline_no_cli
+  - _self_
+
+exp_name: 0310_champs
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_scenario_mod: default, buffer_50p, buffer_200p, time_2s_2ms, time_2s_10ms
+      algorithm.magnneto.seed: 1, 2, 3, 4, 5, 6, 7, 8

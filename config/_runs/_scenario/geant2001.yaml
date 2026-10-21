@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - _single_topo
+  - override /scenario@train_scenario: tz_geant2001
+  - override /scenario@validation_scenario: tz_geant2001
+  - override /scenario@eval_scenario: tz_geant2001
+  - _self_

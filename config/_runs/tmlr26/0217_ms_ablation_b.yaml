@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - /_runs/_base_run
+  - override /_runs/_trainer: il_ppo_c
+  - override /_runs/_eval_depl: lm
+  - override /_runs/_type: regular
+  - _self_
+
+exp_name: 0217_ms_ablation
+
+hydra:
+  sweeper:
+    grid_params:
+      _runs/_algo: ms, ms_flat_space, ms_full_pi_updates, ms_old_exploration, ms_path_rand3, ms_small_nn
+      _runs/_scenario: m5, b4, nx_xs
+    list_params:
+      module_init_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_algo_seed: 0, 1, 2, 3, 4, 5, 6, 7
+      train_scen_seed: 0, 1, 2, 3, 4, 5, 6, 7

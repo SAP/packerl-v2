@@ -1,0 +1,63 @@
+# default parameters for PPO training
+defaults:
+  - reward: global_only  # reward function
+  - fieldlines: default_fl  # PPO config for Fieldlines Algorithms
+  - mslim: default_ms  # PPO config for MSlim Algorithms
+  - placer: default_pl  # PPO config for Placer Algorithms
+  - _self_
+
+flavor: "PPO"  # PPO, IPPO, MAPPO, HVPPO
+module_input: "birdseye"  # birdseye, central, local
+
+# number of training iterations
+iterations: 10
+
+# number of rollout episodes per iteration is the product of these three parameters
+num_topologies: 4
+num_event_seqs_per_topology: 4
+num_event_seq_repeats: 1
+
+# the number of mini-batches, used during policy updates.
+# Minibatch size = steps_per_episide * rollout_episodes / num_minibatches
+num_minibatches: 16
+
+# how often to update the policy after a rollout phase (per minibatch)
+update_epochs: 10
+
+# learning rates for policy, value function, and entropy bonus
+pi_lr: 3.0e-4
+vf_lr: 1.0e-3
+ent_lr: 3.0e-4
+
+# - temporal discount factor
+discount_factor: 0.95
+
+# - policy clip range
+pi_clip_range: 0.5
+
+# maximum KL divergence for policy updates (no more update epochs this training step if KL exceeds this value)
+# 0.0 means no limit
+pi_max_kl: 10.0
+
+# maximum clip fraction for policy updates (no more update epochs this training step if clip frac exceeds this value)
+# 0.0 means no limit
+pi_max_clip_fraction: 0.2
+
+# whether to infuse sequence number and timestep as one-hots into value inputs (requires trainer.fixed_scenarios = True)
+vf_onehot_infuse: false
+
+# which scatter reducer to reduce node values to graph values in the value function
+vf_pool: "sum"  # sum, mean
+
+# whether to meta-learn the value function
+vf_meta_learning: false
+vf_meta_adapt_lr: 1.0e-3
+
+# multiplier for value loss
+vf_scaling: 0.5
+
+# value function clip range
+vf_clip_range: 0.3
+
+# temporal tradeoff for GAE
+gae_lambda: 0.90

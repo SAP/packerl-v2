@@ -1,0 +1,43 @@
+# Probability of generated traffic flow being TCP (instead of UDP)
+prob_tcp: 0.8
+
+# maximum size of a flow in bytes (distribution cut-off)
+max_flow_size: 1_000_000_000_000
+
+mode: potential_matrix
+
+mode_configs:
+
+  potential_matrix:
+
+    # Scaling factor for the traffic flow size
+    traffic_scaling: 1.5
+
+    # from 0.0 (more but smaller flows) to 1 (fewer but larger flows)
+    flow_size_tradeoff: 0.5
+
+    # maximum time between two flows in milliseconds (distribution cut-off)
+    max_flow_interarrival_time: 50
+
+    # scale parameter of the flow size distribution (i.e. minimum flow size)
+    flow_size_distribution_scale: 10
+
+    # shape parameter of the flow size distribution
+    flow_size_distribution_shape_base: 0.4
+
+    # shape parameter of the flow interarrival time distribution
+    flow_interarrival_distribution_shape: 1.5
+
+  tm_flowparams:
+
+    # Path to a pre-provided traffic matrix file or directory
+    tm_path: null
+
+    # Path to pre-provided flow stats
+    flowparams_path: null
+
+    interarrival_time_scaling: 1.0
+
+    flowsize_scaling: 1.0
+
+    flow_datarate_scaling: 1.0
