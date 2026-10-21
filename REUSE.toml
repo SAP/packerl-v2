@@ -17,7 +17,7 @@ SPDX-FileCopyrightText = "2026 SAP SE or an SAP affiliate company and packerl co
 SPDX-License-Identifier = "GPL-2.0-or-later"
 
 [[annotations]]
-path = ["baselines/magnneto/actor.py", "baselines/magnneto/environment.py"]
+path = ["src/algorithm/baselines/magnneto/actor.py", "src/algorithm/baselines/magnneto/environment.py"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026, BNN-UPC <guillermo.bernardez@upc.edu>"
 SPDX-License-Identifier = "MIT"
